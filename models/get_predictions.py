@@ -1,12 +1,14 @@
 import pickle
 import pandas as pd
 from models_info import *
+import json
 
 class Model:
-    def __init__(self,name, modelPath):
+    def __init__(self,name):
         self.name=name
+        self.modelPath=MODEL_FILE_LOCATION[name]
 
-        with open(modelPath, "rb") as f:
+        with open(self.modelPath, "rb") as f:
             self.model=pickle.load(f)
         
         self.takesParameters=MODEL_INPUT_FEATURES[name]
@@ -32,7 +34,22 @@ class Model:
         return predictions[0][1]
     
 
+def get_all_model_predctions(input_data):
+    all_models=[]
+    for model_name in MODEL_FILE_LOCATION:
+        all_models.append(Model(model_name))
 
+    results={}
+
+    for m in all_models:
+        results[m.name]=m.get_prediction(input_data)
+    
+    #return in json format
+    return json.dumps(results)
+
+
+
+#sample input features
 inpf={
     'age': 27,
     'bmi':18.5,
@@ -43,10 +60,6 @@ inpf={
     "female" : 0
 }
 
-all_models=[]
-for model_name, address in MODEL_FILE_LOCATION.items():
-    all_models.append(Model(model_name, address))
+print(get_all_model_predctions(inpf))
 
-for m in all_models:
-    print(f"{m.name}: {(m.get_prediction(inpf) * 100):.2f}% \n")
     
