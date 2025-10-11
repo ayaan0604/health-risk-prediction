@@ -32,13 +32,16 @@ class Model:
         predictions=self.model.predict_proba(input_dataframe)
         
         return predictions[0][1]
-    
 
-def get_all_model_predctions(input_data):
+
+def get_all_models():
     all_models=[]
     for model_name in MODEL_FILE_LOCATION:
         all_models.append(Model(model_name))
+    return all_models
 
+def get_all_model_predictions(all_models,input_data):
+    
     results={}
 
     for m in all_models:
@@ -60,6 +63,7 @@ inpf={
     "female" : 0
 }
 
-print(get_all_model_predctions(inpf))
+models_list=get_all_models()
 
-    
+if __name__=='__main__':
+    print(get_all_model_predictions(models_list, inpf)) 

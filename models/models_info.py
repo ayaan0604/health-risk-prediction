@@ -5,15 +5,19 @@ MODEL_FILE_LOCATION={
     'hypertension'  : "models/hypertension/hypertension_model_logistic_v2.pkl"
 }
 
-
-MODEL_INPUT_FEATURES={
+#make sure the input features are in the correct
+#order as accepted by the model
+#the get_feature_names function comes in handy
+MODEL_INPUT_FEATURES={     
     'diabetes' : ['age', 'bmi'],
     'cardio_disease' : ['age', 'smoke', 'alco','active', 'bmi', 'male', 'female'],
     'liver_disease' : ['age', 'male', 'female', 'bmi', 'smoke'],
     'hypertension' : ['male', 'age', 'bmi', 'smoke', 'female']
 }
 
+# a very useful function
 def get_feature_names(file_address):
     import pickle
     model=pickle.load(open(file_address, 'rb'))
-    print(model.feature_names_in_)
+    return model.feature_names_in_
+    #print(model.feature_names_in_)
