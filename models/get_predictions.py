@@ -1,6 +1,9 @@
 import pickle
 import pandas as pd
-from models_info import *
+if __name__ =="__main__":
+    from models_info import *
+else:
+    from .models_info import *
 import json
 
 class Model:
@@ -48,22 +51,28 @@ def get_all_model_predictions(all_models,input_data):
         results[m.name]=m.get_prediction(input_data)
     
     #return in json format
-    return json.dumps(results)
+    #return json.dumps(results)
+    return results
+   
 
 
 
 #sample input features
 inpf={
-    'age': 27,
-    'bmi':18.5,
+    'age': 21,
+    'bmi':27.0,
     'smoke': 0,
     'alco': 0,
-    'active': 1,
+    'active': 0,
     "male":1,
-    "female" : 0
+    "female" : 0,
+    'water_intake' : 3,
+    'caloric_food' : 1,
+    'meals' : 4
 }
 
 models_list=get_all_models()
 
 if __name__=='__main__':
     print(get_all_model_predictions(models_list, inpf)) 
+    
