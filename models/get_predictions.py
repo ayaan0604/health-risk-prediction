@@ -4,7 +4,7 @@ if __name__ =="__main__":
     from models_info import *
 else:
     from .models_info import *
-import json
+import sklearn
 
 class Model:
     def __init__(self,name):
@@ -34,7 +34,7 @@ class Model:
 
         predictions=self.model.predict_proba(input_dataframe)
         
-        return predictions[0][1]
+        return float(predictions[0][1])
 
 
 def get_all_models():

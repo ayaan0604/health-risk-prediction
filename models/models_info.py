@@ -3,7 +3,8 @@ MODEL_FILE_LOCATION={
     'cardio_disease' : "models/heart disease/model/logistic_regression_cardio_model_v2.pkl",
     #'liver_disease' : "models/liver/randomForest_fatty_liver.pkl",
     'hypertension'  : "models/hypertension/hypertension_model_logistic_v2.pkl",
-    'obesity' : "models/Obesity/Obesity_logisticRegression_v2.pkl"
+    'obesity' : "models/Obesity/Obesity_logisticRegression_v2.pkl",
+    'cancer' : "models/Cancer/Cancer_LogisticRegression_v2.pkl"
 }
 
 #make sure the input features are in the correct
@@ -11,11 +12,18 @@ MODEL_FILE_LOCATION={
 #the get_feature_names function comes in handy
 MODEL_INPUT_FEATURES={     
     'diabetes' : ['age', 'bmi'],
+
     'cardio_disease' : ['age', 'smoke', 'alco','active', 'bmi', 'male', 'female'],
+
     #'liver_disease' : ['age', 'male', 'female', 'bmi', 'smoke'],
+
     'hypertension' : ['male', 'age', 'bmi', 'smoke', 'female'],
+
     'obesity' : ['male','female', 'age', 'smoke', 'bmi', 'alco',
-                'water_intake', 'caloric_food', 'meals', 'active']
+                'water_intake', 'caloric_food', 'meals', 'active'],
+
+    'cancer' : ['male', 'female', 'age', 'bmi', 'smoke', 'active',
+                'alco']
 }
 
 # a very useful function
