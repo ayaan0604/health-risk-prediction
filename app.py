@@ -1,9 +1,10 @@
 from flask import Flask, render_template, request, jsonify
+from flask_cors import CORS
 from models.get_predictions import *
 
 
 app = Flask(__name__)
-
+CORS(app)
 
 @app.route("/get_response", methods=["GET"])
 def get_results():
