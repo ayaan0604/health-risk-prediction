@@ -1,19 +1,28 @@
-from flask import Flask, render_template, request, jsonify
-from flask_cors import CORS
-from models.get_predictions import *
+from fastapi import FastAPI, HTTPException
+from models_manager import Models_Manager
+from requests_manager import Prediction_Request
 
 
-app = Flask(__name__)
-CORS(app)
 
-@app.route("/get_response", methods=["GET"])
-def get_results():
-    if request.method=='GET':
-        info=request.args.to_dict()
-        response=get_all_model_predictions(models_list,info)
-        return response
+model_manager = Models_Manager()
 
-if __name__=="__main__":
-    app.run()
+app = FastAPI()
 
 
+# @app.get("/get_results")
+# def get_response(request : Request):
+#     info=dict(request.query_params)
+#     response= model_manager.get_all_model_predictions(info)
+#     return response
+
+@app.get("/get_info")
+def get_all_models_information():
+    return model_manager.get_all_models_info()
+
+@app.post("/results")
+async def get_all_models_prediction(request : Prediction_Request):
+    try:
+        return model_manager.get_all_model_predictions(request.to_input_features())
+
+    except Exception as e:
+        raise HTTPException(status_code=400, detail=str(e))

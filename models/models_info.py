@@ -1,30 +1,28 @@
-MODEL_FILE_LOCATION={
-    'diabetes' : "models/diabetes/decison_tree_diabetes_v2.pkl",
-    'cardio_disease' : "models/heart disease/model/logistic_regression_cardio_model_v2.pkl",
-    #'liver_disease' : "models/liver/randomForest_fatty_liver.pkl",
-    'hypertension'  : "models/hypertension/hypertension_model_logistic_v2.pkl",
-    'obesity' : "models/Obesity/Obesity_logisticRegression_v2.pkl",
-    'cancer' : "models/Cancer/Cancer_LogisticRegression_v2.pkl"
-}
+import json
 
-#make sure the input features are in the correct
-#order as accepted by the model
-#the get_feature_names function comes in handy
-MODEL_INPUT_FEATURES={     
-    'diabetes' : ['age', 'bmi'],
+class Info_Manager:
+    def __init__(self):
+        self.file = "models/models_info.json"
 
-    'cardio_disease' : ['age', 'smoke', 'alco','active', 'bmi', 'male', 'female'],
+    def get_all_models_info(self):
+        
+        with open(self.file, "r") as f:
+            data = json.load(f)['models']
 
-    #'liver_disease' : ['age', 'male', 'female', 'bmi', 'smoke'],
+        return data
 
-    'hypertension' : ['male', 'age', 'bmi', 'smoke', 'female'],
+    def get_all_features_info(self):
+        with open(self.file, "r") as f:
+            data = json.load(f)["feature_definitions"]
+        
+        return data
 
-    'obesity' : ['male','female', 'age', 'smoke', 'bmi', 'alco',
-                'water_intake', 'caloric_food', 'meals', 'active'],
 
-    'cancer' : ['male', 'female', 'age', 'bmi', 'smoke', 'active',
-                'alco']
-}
+
+
+        
+
+
 
 # a very useful function
 def get_feature_names(file_address):
