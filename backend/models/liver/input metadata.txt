@@ -1,0 +1,23 @@
+Data features:
+
+Age- range from 18 to 70, mean 46
+
+
+Gender (Female=1, Male=2)- good distribution of gender ( about half)
+
+
+Body Mass Index- given float64
+
+
+smoking - categories (1,2,3) based on severity
+
+
+fatty_liver- target, binary
+
+Input features-
+
+ 0   Age              int64	years
+ 1   male             int64	binary  
+ 2   female           int64	binary  
+ 3   Body Mass Index  float64	float
+ 4   smoking          float64	1,2,3 (mild, med, high)
