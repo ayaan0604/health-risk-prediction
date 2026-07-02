@@ -2,7 +2,7 @@ const inputForm = document.getElementById("input-form")
     
 const resultDiv = document.getElementById("result")
 
-const url = "http://127.0.0.1:8000/results"
+const url = "https://health-risk-prediction-9qe8.onrender.com/results"
 
 function getRiskLevel(percentage){
     if(percentage < 25) return "Low"
