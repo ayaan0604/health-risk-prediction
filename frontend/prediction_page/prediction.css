@@ -1,0 +1,453 @@
+:root{
+    --bg:#0F172A;
+    --surface:#1E293B;
+    --surface-2:#334155;
+    --border:rgba(255,255,255,0.05);
+
+    --primary:#3B82F6;
+    --primary-hover:#2563EB;
+
+    --success:#22C55E;
+    --warning:#F59E0B;
+    --danger:#EF4444;
+
+    --text:#F8FAFC;
+    --muted:#94A3B8;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Montserrat',sans-serif;
+}
+
+body{
+    min-height:100vh;
+
+    background:
+        linear-gradient(
+           rgba(15,23,42,.4),
+            rgba(15,23,42,.4)
+        ),
+        url("assets/predictionBg.png");
+
+    background-size:cover;
+    background-position:center;
+
+    color:var(--text);
+
+    padding:32px;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:18px 30px;
+
+    background:rgba(30,41,59,.5);
+
+    border:1px solid var(--border);
+
+    border-radius:18px;
+
+    backdrop-filter:blur(14px);
+}
+
+.navbar .title {
+    display: flex;
+    justify-content: flex-end;
+    align-items: baseline;
+}
+
+.navbar .title a{
+    font-size: x-large;
+    padding-right: 10px;
+}
+
+.navbar a{
+    color:var(--text);
+    text-decoration:none;
+    font-weight:600;
+    transition:.25s;
+}
+
+
+.navbar a:hover{
+    color:var(--primary);
+}
+
+/* ================= LAYOUT ================= */
+
+.main-container{
+
+    margin-top:28px;
+
+    display:grid;
+    grid-template-columns:1.45fr 1fr;
+
+    gap:28px;
+
+    align-items:start;
+}
+
+.panel{
+
+    background:rgba(30,41,59,.5);
+
+    border:1px solid var(--border);
+
+    border-radius:24px;
+
+    padding:28px;
+}
+
+.panel-title{
+
+    font-size:2.3rem;
+
+    font-weight:700;
+
+    margin-bottom:28px;
+}
+
+/* ================= FORM ================= */
+
+.form-inner{
+
+    background:transparent;
+
+    padding:0;
+}
+
+.form-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:26px 36px;
+}
+
+.form-group{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+}
+
+.form-group label{
+
+    font-size:.95rem;
+
+    color:bed1ea;
+
+    font-weight:600;
+}
+
+/* Inputs */
+
+.text-input{
+
+    width:100%;
+
+    height:48px;
+
+    border-radius:12px;
+
+    border:1px solid var(--border);
+
+    background:var(--surface-2);
+
+    color:var(--text);
+
+    padding:0 16px;
+
+    outline:none;
+
+    transition:.25s;
+}
+
+.text-input::placeholder{
+
+    color:#7c8ba1;
+}
+
+.text-input:focus{
+
+    border-color:var(--primary);
+
+    box-shadow:0 0 0 3px rgba(59,130,246,.2);
+}
+
+/* Radios */
+
+.radio-group{
+
+    display:flex;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+}
+
+.radio-group label{
+
+    color:var(--text);
+
+    font-weight:500;
+
+    display:flex;
+
+    gap:8px;
+
+    align-items:center;
+
+    cursor:pointer;
+}
+
+input[type="radio"]{
+
+    accent-color:var(--primary);
+
+    transform:scale(1.1);
+}
+
+/* Button */
+
+.submit-wrapper{
+
+    display:flex;
+
+    justify-content:center;
+
+    margin-top:40px;
+}
+
+.submit-btn{
+
+    border:none;
+
+    cursor:pointer;
+
+    padding:14px 34px;
+
+    border-radius:14px;
+
+    background:var(--primary);
+
+    color:white;
+
+    font-size:1rem;
+
+    font-weight:700;
+
+    transition:.25s;
+}
+
+.submit-btn:hover{
+
+    background:var(--primary-hover);
+
+    transform:translateY(-2px);
+}
+
+/* ================= RESULTS ================= */
+
+.result-inner{
+
+    min-height:650px;
+
+    border:1px solid var(--border);
+
+    border-radius:18px;
+
+    background:rgba(15,23,42,.3);
+
+    padding:22px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+}
+
+#result{
+
+    width:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+}
+
+.placeholder-text{
+
+    color:var(--muted);
+
+    text-align:center;
+
+    font-size:1rem;
+}
+
+/* ================= RESULT CARD ================= */
+
+.risk-card{
+
+    width:100%;
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-radius:18px;
+
+    overflow:hidden;
+}
+
+.risk-card-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:14px 18px;
+
+    background:rgba(255,255,255,.04);
+
+    border-bottom:1px solid var(--border);
+}
+
+.risk-title{
+
+    color:var(--text);
+
+    font-size:1rem;
+
+    font-weight:600;
+}
+
+.risk-dot{
+
+    width:10px;
+
+    height:10px;
+
+    border-radius:50%;
+}
+
+.risk-card-body{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    padding:22px 18px;
+}
+
+.progress-container{
+
+    flex:1;
+
+    height:10px;
+
+    background:#273549;
+
+    border-radius:20px;
+
+    overflow:hidden;
+}
+
+.progress-bar{
+
+    height:100%;
+
+    width:0;
+
+    border-radius:20px;
+
+    transition:width .5s ease;
+}
+
+.risk-percent{
+
+    font-size:1.7rem;
+
+    color:white;
+
+    font-weight:700;
+
+    min-width:72px;
+
+    text-align:right;
+}
+
+/* Risk Colors */
+
+.risk-low{
+
+    background:var(--success);
+}
+
+.risk-moderate{
+
+    background:var(--warning);
+}
+
+.risk-high{
+
+    background:var(--danger);
+}
+
+/* ================= SCROLLBAR ================= */
+
+::-webkit-scrollbar{
+
+    width:8px;
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--surface-2);
+
+    border-radius:10px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:1000px){
+
+    body{
+
+        padding:20px;
+    }
+
+    .main-container{
+
+        grid-template-columns:1fr;
+    }
+
+    .form-grid{
+
+        grid-template-columns:1fr;
+    }
+
+    .panel-title{
+
+        font-size:2rem;
+    }
+
+}
