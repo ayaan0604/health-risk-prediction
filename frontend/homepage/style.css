@@ -1,0 +1,797 @@
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:"Montserrat",sans-serif;
+
+    background:#080808;
+
+    color:white;
+
+    overflow-x:hidden;
+
+}
+
+
+/*  HERO  */
+
+.hero{
+
+    position:relative;
+
+    min-height:100vh;
+
+    overflow:hidden;
+
+    
+    background-image:url("assets/darkBg.png");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    
+
+}
+
+
+/*  NAVBAR  */
+
+.navbar{
+
+    width:100%;
+
+    height:90px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:0 70px;
+
+    position:relative;
+
+    z-index:100;
+
+}
+
+
+.logo{
+
+    font-size:42px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+}
+
+
+.nav-links{
+
+    display:flex;
+
+    list-style:none;
+
+    gap:45px;
+
+}
+
+
+.nav-links a{
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:17px;
+
+    font-weight:500;
+
+    transition:.3s;
+
+}
+
+
+.nav-links a:hover{
+
+    opacity:.7;
+
+}
+
+
+/*  hero content */
+
+.hero-container{
+
+    width:min(90%,1400px);
+
+    margin:auto;
+
+    min-height:calc(100vh - 90px);
+
+    display:flex;
+
+    align-items:center;
+
+}
+
+
+.hero-content{
+
+    width:55%;
+
+    position:relative;
+
+    z-index:5;
+
+}
+
+
+.hero-content h1{
+
+    font-family:"Montserrat",sans-serif;
+
+    font-size:5rem;
+
+    font-weight:800;
+
+    line-height:.95;
+
+    letter-spacing:-2px;
+
+    margin-bottom:25px;
+
+}
+
+
+.hero-content p{
+
+    max-width:520px;
+
+    color:#d4d4d4;
+
+    font-size:1.2rem;
+
+    line-height:1.7;
+
+}
+
+
+.hero-buttons{
+
+    display:flex;
+
+    gap:20px;
+
+    margin-top:45px;
+
+}
+
+
+/*  buttons  */
+
+.btn{
+
+    padding:16px 38px;
+
+    border-radius:50px;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+
+.btn-primary{
+
+    background:white;
+
+    color:black;
+
+}
+
+
+.btn-secondary{
+
+    background:#3c3c3c;
+
+    color:white;
+
+}
+
+
+.btn:hover{
+
+    transform:translateY(-5px);
+
+}
+
+
+/*  robot */
+
+.hero-robot{
+
+    position:absolute;
+
+    right:5%;
+
+    bottom:0;
+
+    width:38vw;
+
+    max-width:600px;
+
+    min-width:330px;
+
+    z-index:2;
+
+    pointer-events:none;
+
+    user-select:none;
+
+}
+
+
+/*  tab */
+
+@media(max-width:992px){
+
+    .navbar{
+
+        padding:0 40px;
+
+    }
+
+    .hero-content{
+
+        width:65%;
+
+    }
+
+    .hero-content h1{
+
+        font-size:4.2rem;
+
+    }
+
+    .hero-robot{
+
+        width:42vw;
+
+        right:-5%;
+
+    }
+
+}
+
+
+/*  phone  */
+
+@media(max-width:768px){
+
+    .navbar{
+
+        padding:25px;
+
+        flex-direction:column;
+
+        gap:20px;
+
+        height:auto;
+
+    }
+
+    .nav-links{
+
+        gap:25px;
+
+    }
+
+    .hero-container{
+
+        justify-content:center;
+
+        text-align:center;
+
+        padding-top:40px;
+
+    }
+
+    .hero-content{
+
+        width:100%;
+
+    }
+
+    .hero-content h1{
+
+        font-size:3.3rem;
+
+    }
+
+    .hero-content p{
+
+        margin:auto;
+
+        font-size:1rem;
+
+    }
+
+    .hero-buttons{
+
+        justify-content:center;
+
+        flex-wrap:wrap;
+
+    }
+
+    .hero-robot{
+
+        width:72vw;
+
+        min-width:250px;
+
+        left:50%;
+
+        transform:translateX(-50%);
+
+        right:auto;
+
+        bottom:0;
+
+        opacity:.95;
+
+    }
+
+}
+
+
+/*  about */
+
+.about-section{
+
+    background:#090909;
+
+    padding:90px 0 70px;
+
+}
+
+.about-container{
+
+    width:min(92%,1300px);
+
+    margin:auto;
+
+}
+
+/*  top  */
+
+.about-top{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:90px;
+
+    align-items:start;
+
+}
+
+.project-info h2,
+.works-info h2{
+
+    font-family:"Montserrat",sans-serif;
+
+    font-size:3rem;
+
+    font-weight:800;
+
+    margin-bottom:22px;
+
+}
+
+.works-info h2{
+
+    text-align:right;
+
+}
+
+.project-info p,
+.works-info p{
+
+    font-size:1.08rem;
+
+    color:#d1d1d1;
+
+    line-height:1.9;
+
+    margin-bottom:12px;
+
+}
+
+/*  workflow  */
+
+.workflow{
+
+    margin-top:70px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:flex-start;
+
+    gap:18px;
+
+    flex-wrap:nowrap;
+
+}
+
+.step{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+}
+
+.step-title{
+
+    background:white;
+
+    color:black;
+
+    border-radius:22px;
+
+    width:145px;
+
+    height:62px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    font-weight:600;
+
+    font-size:1rem;
+
+    line-height:1.2;
+
+}
+
+.step img{
+
+    width:68px;
+
+    margin-top:18px;
+
+}
+
+.workflow-arrow{
+
+    width:26px;
+
+    margin-top:18px;
+
+}
+
+/* ==========================================
+            TABLET
+========================================== */
+
+@media (max-width:992px){
+
+.about-top{
+
+    grid-template-columns:1fr;
+
+    gap:45px;
+
+}
+
+.works-info h2{
+
+    text-align:left;
+
+}
+
+.workflow{
+
+    flex-wrap:wrap;
+
+    row-gap:35px;
+
+}
+
+.workflow-arrow{
+
+    display:none;
+
+}
+
+}
+
+/*  phone  */
+
+@media (max-width:768px){
+
+.about-section{
+
+    padding:70px 0 50px;
+
+}
+
+.project-info h2,
+.works-info h2{
+
+    font-size:2.3rem;
+
+    text-align:center;
+
+}
+
+.project-info p,
+.works-info p{
+
+    text-align:center;
+
+    font-size:1rem;
+
+}
+
+.workflow{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:30px 20px;
+
+    justify-items:center;
+
+}
+
+.step-title{
+
+    width:135px;
+
+    height:58px;
+
+    font-size:.95rem;
+
+}
+
+.step img{
+
+    width:60px;
+
+}
+
+}
+
+
+
+@media (max-width:480px){
+
+.workflow{
+
+    grid-template-columns:1fr;
+
+}
+
+}
+
+
+
+/*  disease section  */
+
+.disease-section{
+
+   background-color:#f0f3f5;
+
+    background-image:url("assets/infoBg.png");
+
+    background-repeat:no-repeat;
+
+    background-position:center bottom;
+
+    background-size:cover;
+
+    padding:80px 0;
+
+    position:relative;
+
+    overflow:hidden;
+
+
+}
+
+.disease-container{
+
+    width:min(92%,1300px);
+
+    margin:auto;
+
+}
+
+.disease-container h2{
+
+    font-family:"Montserrat",sans-serif;
+
+    font-size:3rem;
+
+    font-weight:800;
+
+    color:#111;
+
+    margin-bottom:35px;
+
+}
+
+
+/* Accordion */
+
+.disease-card{
+
+    background:#0c0c0c;
+
+    color:white;
+
+    border-radius:18px;
+
+    margin-bottom:14px;
+
+    overflow:hidden;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.disease-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:16px 22px;
+
+    font-weight:700;
+
+    font-size:1.1rem;
+
+}
+
+.disease-body{
+
+    max-height:0;
+
+    overflow:hidden;
+
+    transition:max-height .35s ease;
+
+}
+
+.disease-body p{
+
+    padding:0 22px 18px;
+
+    color:#d8d8d8;
+
+    line-height:1.7;
+
+}
+
+
+/* Open Card */
+
+.disease-card.active .disease-body{
+
+    max-height:250px;
+
+}
+
+
+/* Bottom Buttons */
+
+.bottom-buttons{
+
+    width:min(92%,1300px);
+
+    margin:80px auto 0;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:25px;
+
+    flex-wrap:wrap;
+
+}
+
+.bottom-btn{
+
+    flex:1;
+
+    min-width:240px;
+
+    background:#f9f9f9;
+
+    border: 0.5px solid black;
+
+    color:rgb(0, 0, 0);
+
+    text-decoration:none;
+
+    padding:20px;
+
+    text-align:center;
+
+    border-radius:18px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.bottom-btn#predict{
+    background: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    border: 0.5px solid black
+}
+
+.bottom-btn:hover{
+
+    transform:translateY(-4px);
+
+}
+
+
+/* Responsive */
+
+@media(max-width:768px){
+
+.bottom-buttons{
+
+    flex-direction:column;
+
+}
+
+.bottom-btn{
+
+    width:100%;
+
+}
+
+.disease-container h2{
+
+    font-size:2.3rem;
+
+}
+
+}

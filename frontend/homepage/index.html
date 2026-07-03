@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Risk Prediction</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@400;500;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+<section class="hero">
+
+    <!--  NAVBAR  -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            +
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="../prediction_page/index.html">Prediction</a></li>
+            <li><a href="https://github.com/ayaan0604/health-risk-prediction/" target="_blank">Github</a></li>
+        </ul>
+
+    </nav>
+
+    <!-- HERO  -->
+
+    <div class="hero-container">
+
+        <div class="hero-content">
+
+            <h1>Health Risk Prediction</h1>
+
+            <p>
+                AI powered disease risk assessment system
+                using lifestyle and demographic information.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="../prediction_page/index.html" class="btn btn-primary">
+                    Try Now
+                </a>
+
+                <a href="javascript:void(0)" class="btn btn-secondary" onclick="scrollToAbout()">
+                    Learn More
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Robot -->
+
+    <img src="assets/robot.png" alt="Robot" class="hero-robot">
+
+</section>
+
+<!--  ABOUT SECTION  -->
+
+<section class="about-section" id = "about">
+
+    <div class="about-container">
+
+        <!-- Top -->
+
+        <div class="about-top">
+
+            <div class="project-info">
+
+                <h2>What is this Project?</h2>
+
+                <p>
+                    Many chronic diseases are strongly influenced by lifestyle choices.
+                </p>
+
+                <p>
+                    This project demonstrates how machine learning models can estimate disease
+                    risk using demographic and lifestyle information to encourage preventive
+                    healthcare.
+                </p>
+
+            </div>
+
+            <div class="works-info">
+
+                <h2>How It Works?</h2>
+
+                <p>
+                    Our system analyzes key lifestyle and demographic information to estimate
+                    the risk of multiple chronic diseases using trained machine learning
+                    models. After you provide your details, the backend validates the inputs
+                    and automatically selects the relevant prediction models based on the
+                    available data. Each model processes the information independently and
+                    returns a risk score, which is then presented through an intuitive
+                    dashboard to help users better understand their potential health risks.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Workflow -->
+
+        <div class="workflow">
+
+            <div class="step">
+
+                <div class="step-title">
+                    Input Data
+                </div>
+
+                <img src="assets/input.png" alt="">
+            </div>
+
+
+            <img class="workflow-arrow" src="assets/arrow.png" alt="">
+
+
+            <div class="step">
+
+                <div class="step-title">
+                    Data<br>Validation
+                </div>
+
+                <img src="assets/validation.png" alt="">
+            </div>
+
+
+            <img class="workflow-arrow" src="assets/arrow.png" alt="">
+
+
+            <div class="step">
+
+                <div class="step-title">
+                    AI Models
+                </div>
+
+                <img src="assets/model.png" alt="">
+            </div>
+
+
+            <img class="workflow-arrow" src="assets/arrow.png" alt="">
+
+
+            <div class="step">
+
+                <div class="step-title">
+                    Prediction<br>Scores
+                </div>
+
+                <img src="assets/score.png" alt="">
+            </div>
+
+
+            <img class="workflow-arrow" src="assets/arrow.png" alt="">
+
+
+            <div class="step">
+
+                <div class="step-title">
+                    Result<br>Dashboard
+                </div>
+
+                <img src="assets/result.png" alt="">
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="disease-section">
+
+    <div class="disease-container">
+
+        <h2>Supported Disease Models</h2>
+
+        <div id="diseaseCards"></div>
+
+    </div>
+
+    <div class="bottom-buttons">
+
+        <a href="../prediction_page/index.html" class="bottom-btn" id = "predict">
+            Predict Your Health Risks
+        </a>
+
+        <a href="https://github.com/ayaan0604/health-risk-prediction/" target="_blank" class="bottom-btn">
+            Visit the docs at GitHub
+        </a>
+
+        <a href="mailto:ansariayaan0604@gmail.com" class="bottom-btn" id = 'mail'>
+            Contact
+        </a>
+
+    </div>
+
+</section>
+
+<script src = "script.js"></script>
+</body>
+</html>

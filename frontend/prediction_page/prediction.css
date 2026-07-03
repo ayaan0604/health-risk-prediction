@@ -27,8 +27,8 @@ body{
 
     background:
         linear-gradient(
-           rgba(15,23,42,.4),
-            rgba(15,23,42,.4)
+           rgba(15,23,42,.5),
+            rgba(15,23,42,.5)
         ),
         url("assets/predictionBg.png");
 
