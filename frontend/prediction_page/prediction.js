@@ -2,7 +2,9 @@ const inputForm = document.getElementById("input-form")
     
 const resultDiv = document.getElementById("result")
 
-const url = "https://health-risk-prediction-9qe8.onrender.com/results"
+base_url = 'https://health-risk-prediction-9qe8.onrender.com'
+const url = `${base_url}/results`
+
 
 function getRiskLevel(percentage){
     if(percentage < 25) return "Low"
@@ -129,7 +131,7 @@ function displayResult(result){
 inputForm.addEventListener("submit", (event)=>{
     event.preventDefault()
 
-    resultDiv.innerHTML = ""
+    resultDiv.innerHTML = "<p style = {padding-left : 40%;}>Loading</p>"
 
     const data = getFormData()
 
@@ -138,3 +140,5 @@ inputForm.addEventListener("submit", (event)=>{
 
     
 })
+
+

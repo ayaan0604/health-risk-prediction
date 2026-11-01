@@ -2,12 +2,14 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from models_manager import Models_Manager
 from requests_manager import Prediction_Request
+from dotenv import load_dotenv
 import os
 
+load_dotenv()
 origins = os.getenv("ALLOWED_ORIGINS", "").split(",")
 
 
-
+print(origins)
 
 model_manager = Models_Manager()
 

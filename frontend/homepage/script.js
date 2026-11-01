@@ -1,7 +1,10 @@
-const url = "https://health-risk-prediction-9qe8.onrender.com/get_info"
+const base_url = "https://health-risk-prediction-9qe8.onrender.com"
 
+const url = `${base_url}/get_info`
 
 const diseaseContainer = document.getElementById("diseaseCards");
+
+
 
 
 function createDiseaseCard(name, details){
